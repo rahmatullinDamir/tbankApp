@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		837422232DBF0B6400FDBE7E /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837422212DBF0B6400FDBE7E /* Roboto-Bold.ttf */; };
+		837422242DBF0B6400FDBE7E /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837422222DBF0B6400FDBE7E /* Roboto-Medium.ttf */; };
+		837422262DBF0D1600FDBE7E /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837422252DBF0D1600FDBE7E /* Roboto-Regular.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		835F30A32DB5CE0B002CD387 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 835F30812DB5CE08002CD387 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 835F30882DB5CE08002CD387;
+			remoteInfo = travelerApp;
+		};
+		835F30AD2DB5CE0B002CD387 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 835F30812DB5CE08002CD387 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 835F30882DB5CE08002CD387;
+			remoteInfo = travelerApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		835F30892DB5CE08002CD387 /* travelerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		835F30A22DB5CE0B002CD387 /* travelerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = travelerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		835F30AC2DB5CE0B002CD387 /* travelerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = travelerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		837422212DBF0B6400FDBE7E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		837422222DBF0B6400FDBE7E /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		837422252DBF0D1600FDBE7E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		837421772DBE8D8C00FDBE7E /* Exceptions for "travelerApp" folder in "travelerApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 835F30882DB5CE08002CD387 /* travelerApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		835F30A52DB5CE0B002CD387 /* travelerAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = travelerAppTests;
+			sourceTree = "<group>";
+		};
+		835F30AF2DB5CE0B002CD387 /* travelerAppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = travelerAppUITests;
+			sourceTree = "<group>";
+		};
+		837421712DBE8D8C00FDBE7E /* travelerApp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				837421772DBE8D8C00FDBE7E /* Exceptions for "travelerApp" folder in "travelerApp" target */,
+			);
+			path = travelerApp;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		835F30862DB5CE08002CD387 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		835F309F2DB5CE0B002CD387 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		835F30A92DB5CE0B002CD387 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		835F30802DB5CE08002CD387 = {
+			isa = PBXGroup;
+			children = (
+				837422252DBF0D1600FDBE7E /* Roboto-Regular.ttf */,
+				837422212DBF0B6400FDBE7E /* Roboto-Bold.ttf */,
+				837422222DBF0B6400FDBE7E /* Roboto-Medium.ttf */,
+				837421712DBE8D8C00FDBE7E /* travelerApp */,
+				835F30A52DB5CE0B002CD387 /* travelerAppTests */,
+				835F30AF2DB5CE0B002CD387 /* travelerAppUITests */,
+				835F308A2DB5CE08002CD387 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		835F308A2DB5CE08002CD387 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				835F30892DB5CE08002CD387 /* travelerApp.app */,
+				835F30A22DB5CE0B002CD387 /* travelerAppTests.xctest */,
+				835F30AC2DB5CE0B002CD387 /* travelerAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		835F30882DB5CE08002CD387 /* travelerApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 835F30B52DB5CE0B002CD387 /* Build configuration list for PBXNativeTarget "travelerApp" */;
+			buildPhases = (
+				837422712DBFB03E00FDBE7E /* SwiftLint */,
+				835F30852DB5CE08002CD387 /* Sources */,
+				835F30862DB5CE08002CD387 /* Frameworks */,
+				835F30872DB5CE08002CD387 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				837421712DBE8D8C00FDBE7E /* travelerApp */,
+			);
+			name = travelerApp;
+			packageProductDependencies = (
+			);
+			productName = travelerApp;
+			productReference = 835F30892DB5CE08002CD387 /* travelerApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		835F30A12DB5CE0B002CD387 /* travelerAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 835F30BA2DB5CE0B002CD387 /* Build configuration list for PBXNativeTarget "travelerAppTests" */;
+			buildPhases = (
+				835F309E2DB5CE0B002CD387 /* Sources */,
+				835F309F2DB5CE0B002CD387 /* Frameworks */,
+				835F30A02DB5CE0B002CD387 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				835F30A42DB5CE0B002CD387 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				835F30A52DB5CE0B002CD387 /* travelerAppTests */,
+			);
+			name = travelerAppTests;
+			packageProductDependencies = (
+			);
+			productName = travelerAppTests;
+			productReference = 835F30A22DB5CE0B002CD387 /* travelerAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		835F30AB2DB5CE0B002CD387 /* travelerAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 835F30BD2DB5CE0B002CD387 /* Build configuration list for PBXNativeTarget "travelerAppUITests" */;
+			buildPhases = (
+				835F30A82DB5CE0B002CD387 /* Sources */,
+				835F30A92DB5CE0B002CD387 /* Frameworks */,
+				835F30AA2DB5CE0B002CD387 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				835F30AE2DB5CE0B002CD387 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				835F30AF2DB5CE0B002CD387 /* travelerAppUITests */,
+			);
+			name = travelerAppUITests;
+			packageProductDependencies = (
+			);
+			productName = travelerAppUITests;
+			productReference = 835F30AC2DB5CE0B002CD387 /* travelerAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		835F30812DB5CE08002CD387 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					835F30882DB5CE08002CD387 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					835F30A12DB5CE0B002CD387 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 835F30882DB5CE08002CD387;
+					};
+					835F30AB2DB5CE0B002CD387 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 835F30882DB5CE08002CD387;
+					};
+				};
+			};
+			buildConfigurationList = 835F30842DB5CE08002CD387 /* Build configuration list for PBXProject "travelerApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 835F30802DB5CE08002CD387;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 835F308A2DB5CE08002CD387 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				835F30882DB5CE08002CD387 /* travelerApp */,
+				835F30A12DB5CE0B002CD387 /* travelerAppTests */,
+				835F30AB2DB5CE0B002CD387 /* travelerAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		835F30872DB5CE08002CD387 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				837422232DBF0B6400FDBE7E /* Roboto-Bold.ttf in Resources */,
+				837422242DBF0B6400FDBE7E /* Roboto-Medium.ttf in Resources */,
+				837422262DBF0D1600FDBE7E /* Roboto-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		835F30A02DB5CE0B002CD387 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		835F30AA2DB5CE0B002CD387 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		837422712DBFB03E00FDBE7E /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		835F30852DB5CE08002CD387 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		835F309E2DB5CE0B002CD387 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		835F30A82DB5CE0B002CD387 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		835F30A42DB5CE0B002CD387 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 835F30882DB5CE08002CD387 /* travelerApp */;
+			targetProxy = 835F30A32DB5CE0B002CD387 /* PBXContainerItemProxy */;
+		};
+		835F30AE2DB5CE0B002CD387 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 835F30882DB5CE08002CD387 /* travelerApp */;
+			targetProxy = 835F30AD2DB5CE0B002CD387 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		835F30B62DB5CE0B002CD387 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = travelerApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rahmatullin.damir.travelerApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		835F30B72DB5CE0B002CD387 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = travelerApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rahmatullin.damir.travelerApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		835F30B82DB5CE0B002CD387 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		835F30B92DB5CE0B002CD387 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		835F30BB2DB5CE0B002CD387 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rahmatullin.damir.travelerAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/travelerApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/travelerApp";
+			};
+			name = Debug;
+		};
+		835F30BC2DB5CE0B002CD387 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rahmatullin.damir.travelerAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/travelerApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/travelerApp";
+			};
+			name = Release;
+		};
+		835F30BE2DB5CE0B002CD387 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rahmatullin.damir.travelerAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = travelerApp;
+			};
+			name = Debug;
+		};
+		835F30BF2DB5CE0B002CD387 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rahmatullin.damir.travelerAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = travelerApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		835F30842DB5CE08002CD387 /* Build configuration list for PBXProject "travelerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				835F30B82DB5CE0B002CD387 /* Debug */,
+				835F30B92DB5CE0B002CD387 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		835F30B52DB5CE0B002CD387 /* Build configuration list for PBXNativeTarget "travelerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				835F30B62DB5CE0B002CD387 /* Debug */,
+				835F30B72DB5CE0B002CD387 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		835F30BA2DB5CE0B002CD387 /* Build configuration list for PBXNativeTarget "travelerAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				835F30BB2DB5CE0B002CD387 /* Debug */,
+				835F30BC2DB5CE0B002CD387 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		835F30BD2DB5CE0B002CD387 /* Build configuration list for PBXNativeTarget "travelerAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				835F30BE2DB5CE0B002CD387 /* Debug */,
+				835F30BF2DB5CE0B002CD387 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 835F30812DB5CE08002CD387 /* Project object */;
+}
