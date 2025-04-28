@@ -6,12 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		837422232DBF0B6400FDBE7E /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837422212DBF0B6400FDBE7E /* Roboto-Bold.ttf */; };
-		837422242DBF0B6400FDBE7E /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837422222DBF0B6400FDBE7E /* Roboto-Medium.ttf */; };
-		837422262DBF0D1600FDBE7E /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837422252DBF0D1600FDBE7E /* Roboto-Regular.ttf */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		835F30A32DB5CE0B002CD387 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -33,9 +27,6 @@
 		835F30892DB5CE08002CD387 /* travelerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		835F30A22DB5CE0B002CD387 /* travelerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = travelerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		835F30AC2DB5CE0B002CD387 /* travelerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = travelerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		837422212DBF0B6400FDBE7E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		837422222DBF0B6400FDBE7E /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
-		837422252DBF0D1600FDBE7E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -97,9 +88,6 @@
 		835F30802DB5CE08002CD387 = {
 			isa = PBXGroup;
 			children = (
-				837422252DBF0D1600FDBE7E /* Roboto-Regular.ttf */,
-				837422212DBF0B6400FDBE7E /* Roboto-Bold.ttf */,
-				837422222DBF0B6400FDBE7E /* Roboto-Medium.ttf */,
 				837421712DBE8D8C00FDBE7E /* travelerApp */,
 				835F30A52DB5CE0B002CD387 /* travelerAppTests */,
 				835F30AF2DB5CE0B002CD387 /* travelerAppUITests */,
@@ -240,9 +228,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				837422232DBF0B6400FDBE7E /* Roboto-Bold.ttf in Resources */,
-				837422242DBF0B6400FDBE7E /* Roboto-Medium.ttf in Resources */,
-				837422262DBF0D1600FDBE7E /* Roboto-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
