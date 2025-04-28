@@ -7,12 +7,20 @@
 	objects = {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 11b5bba (ini)
 /* Begin PBXBuildFile section */
 		83693D3F2DC081CA00108C63 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 83693D3E2DC081CA00108C63 /* SnapKit */; };
 /* End PBXBuildFile section */
 
+<<<<<<< HEAD
 >>>>>>> 1fa9f3a (updated structure)
+=======
+=======
+>>>>>>> 5c9c7b3 (ini)
+>>>>>>> 11b5bba (ini)
 /* Begin PBXContainerItemProxy section */
 		835F30A32DB5CE0B002CD387 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
