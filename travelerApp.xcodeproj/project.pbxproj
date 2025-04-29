@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+<<<<<<< HEAD
+=======
+/* Begin PBXBuildFile section */
+		83693D3F2DC081CA00108C63 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 83693D3E2DC081CA00108C63 /* SnapKit */; };
+/* End PBXBuildFile section */
+
+>>>>>>> 1fa9f3a (updated structure)
 /* Begin PBXContainerItemProxy section */
 		835F30A32DB5CE0B002CD387 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -33,7 +40,7 @@
 		837421772DBE8D8C00FDBE7E /* Exceptions for "travelerApp" folder in "travelerApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resources/Info.plist,
 			);
 			target = 835F30882DB5CE08002CD387 /* travelerApp */;
 		};
@@ -65,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83693D3F2DC081CA00108C63 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +134,7 @@
 			);
 			name = travelerApp;
 			packageProductDependencies = (
+				83693D3E2DC081CA00108C63 /* SnapKit */,
 			);
 			productName = travelerApp;
 			productReference = 835F30892DB5CE08002CD387 /* travelerApp.app */;
@@ -210,6 +219,7 @@
 			mainGroup = 835F30802DB5CE08002CD387;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				83693D3D2DC081CA00108C63 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 835F308A2DB5CE08002CD387 /* Products */;
@@ -315,11 +325,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = travelerApp/Info.plist;
+				INFOPLIST_FILE = travelerApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -341,11 +352,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = travelerApp/Info.plist;
+				INFOPLIST_FILE = travelerApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -586,6 +598,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		83693D3D2DC081CA00108C63 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit#";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		83693D3E2DC081CA00108C63 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83693D3D2DC081CA00108C63 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 835F30812DB5CE08002CD387 /* Project object */;
 }
