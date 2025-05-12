@@ -10,6 +10,10 @@ import Combine
 
 protocol LoginViewModeling: ViewModel where State == LoginViewState, Intent == LoginViewIntent {}
 
+protocol LoginViewModelDelegate: AnyObject {
+    func loginViewModelDidRequestRegistration()
+}
+
 final class LoginViewModel: LoginViewModeling {
     @Published private(set) var state: LoginViewState = .loading {
         didSet {
@@ -17,6 +21,7 @@ final class LoginViewModel: LoginViewModeling {
         }
     }
     
+    weak var delegate: LoginViewModelDelegate?
     private(set) var stateDidChange = ObservableObjectPublisher()
     
     func trigger(_ intent: LoginViewIntent) {
@@ -39,7 +44,12 @@ final class LoginViewModel: LoginViewModeling {
                 } else {
                     self?.state = .content("Успешный вход")
                 }
+                
             }
+            break
+        case .onShowRegistration:
+            print("showRegistration")
+            delegate?.loginViewModelDidRequestRegistration()
         }
     }
 }

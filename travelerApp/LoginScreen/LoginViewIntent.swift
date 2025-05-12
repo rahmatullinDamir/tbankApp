@@ -10,4 +10,5 @@ enum LoginViewIntent {
     case onLogin(phoneNumber: String, password: String)
     case onClose
     case onReload
+    case onShowRegistration
 }
