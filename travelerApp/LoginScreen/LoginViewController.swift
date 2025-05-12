@@ -9,7 +9,6 @@ import UIKit
 import Combine
 import SnapKit
 
-
 final class LoginViewController: UIViewController {
     private let viewModel: any LoginViewModeling
     private var bag: Set<AnyCancellable> = []
@@ -24,7 +23,7 @@ final class LoginViewController: UIViewController {
     }
     
     private func configureIO() {
-        viewModel.stateDidChange.sink { [weak self] in
+        viewModel.stateDidChange.sink { [weak self] _ in
             self?.render()
         }
         .store(in: &bag)
@@ -47,31 +46,29 @@ final class LoginViewController: UIViewController {
         view.addSubview(stackView)
         view.addSubview(titleLabel)
         
+        titleLabel.snp.makeConstraints { make in
+            make.bottom.equalTo(stackView.snp.top).offset(-Padding.default.value)
+            make.leading.equalTo(view.snp.leading).offset(Padding.default.value)
+        }
         
-        NSLayoutConstraint.activate([
-            stackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Padding.default.value),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Padding.default.value)
-        ])
-        
-        NSLayoutConstraint.activate([
-            titleLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -Padding.big.value),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Padding.default.value),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Padding.default.value)
-        ])
+        stackView.snp.makeConstraints { make in
+            make.centerY.equalTo(view.snp.centerY)
+            make.leading.equalTo(titleLabel.snp.leading)
+            make.trailing.equalTo(view.snp.trailing).offset(-Padding.default.value)
+        }
     }
     
     private func render() {
         switch viewModel.state {
         case .loading:
-            LoadingManager.shared.show(on: view, with: "Загрузка данных...")
+            CustomLoadingManager.shared.show(on: view, with: "Загрузка данных...")
             
         case .content(let data):
-            LoadingManager.shared.hide()
+            CustomLoadingManager.shared.hide()
             print("Content loaded: \(data)")
             
         case .error(let message):
-            LoadingManager.shared.hide()
+            CustomLoadingManager.shared.hide()
             print("Error: \(message)")
         }
     }
@@ -97,95 +94,45 @@ final class LoginViewController: UIViewController {
         return titleLabel
     }()
     
-    private lazy var phoneNumberTextField: UITextField = {
-        let phoneNumberTextField = UITextField()
-        phoneNumberTextField.placeholder = "Номер телефона"
-        phoneNumberTextField.borderStyle = .roundedRect
-        phoneNumberTextField.autocapitalizationType = .none
-        phoneNumberTextField.font = UIFont(name: FontFamilies.robotoRegular.value, size: FontConstants.regular.value)
-        phoneNumberTextField.keyboardType = .namePhonePad
-        /// phoneNumberTextField.keyboardType = .phonePad хз как лучше чтобы была раскладка для ввода цифр номера или чтобы можно было нажать next и перейти к password??
-        phoneNumberTextField.returnKeyType = .next
-        phoneNumberTextField.backgroundColor = UIColor(hex: CustomColors.grey.value, alpha: 0.03)
-        phoneNumberTextField.layer.cornerRadius = CGFloat.cornerRadius
-        phoneNumberTextField.borderStyle = .none
-        
-        phoneNumberTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: CGFloat.leftSpace, height: 0))
-        phoneNumberTextField.leftViewMode = .always
-        
-        phoneNumberTextField.delegate = self
-        phoneNumberTextField.heightAnchor.constraint(equalToConstant: CGFloat.height).isActive = true
-        return phoneNumberTextField
+    private lazy var phoneNumberTextField: CustomTextField = {
+        return CustomTextField(placeholder: "Номер телефона", keyboardType: .phonePad)
     }()
     
-    private lazy var passwordTextField: UITextField = {
-        let passwordTextField = UITextField()
-        passwordTextField.placeholder = "Пароль"
-        passwordTextField.borderStyle = .roundedRect
-        passwordTextField.textContentType = .password
-        passwordTextField.isSecureTextEntry = true
-        passwordTextField.returnKeyType = .done
-        passwordTextField.font = UIFont(name: FontFamilies.robotoRegular.value, size: FontConstants.regular.value)
-        passwordTextField.backgroundColor = UIColor(hex: CustomColors.grey.value, alpha: 0.03)
-        passwordTextField.layer.cornerRadius = CGFloat.cornerRadius
-        passwordTextField.borderStyle = .none
-        
-        passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: CGFloat.leftSpace, height: 0))
-        passwordTextField.leftViewMode = .always
-           
-        passwordTextField.delegate = self
-        passwordTextField.heightAnchor.constraint(equalToConstant: CGFloat.height).isActive = true
-        return passwordTextField
+    private lazy var passwordTextField: CustomTextField = {
+        let textField = CustomTextField(placeholder: "Пароль", keyboardType: .default)
+        textField.isSecureTextEntry = true
+        textField.delegate = self
+        textField.returnKeyType = .done
+        return textField
     }()
     
-    private lazy var loginButton: UIButton = {
-        let loginButton = UIButton(type: .system)
-        loginButton.setTitle("Войти", for: .normal)
-        loginButton.titleLabel?.font = UIFont(name: FontFamilies.robotoRegular.value, size: FontConstants.regular.value)
-        loginButton.setTitleColor(UIColor(hex: CustomColors.black.value), for: .normal)
-        loginButton.backgroundColor = UIColor(hex: CustomColors.yellow.value)
-        loginButton.heightAnchor.constraint(equalToConstant: CGFloat.height).isActive = true
-        loginButton.layer.cornerRadius = CGFloat.cornerRadius
-        return loginButton
+    private lazy var loginButton: CustomActionButton = {
+        return CustomActionButton(title: "Войти")
     }()
     
-    private lazy var registerButton: UIButton = {
-        let registerButton = UIButton()
-        registerButton.setTitle("Нет аккаунта? Зарегистрируйтесь", for: .normal)
-        registerButton.setTitleColor(UIColor(hex: CustomColors.blue.value), for: .normal)
-        registerButton.isUserInteractionEnabled = true
-        registerButton.titleLabel?.font = UIFont(name: FontFamilies.robotoRegular.value, size: FontConstants.regular.value)
-        registerButton.addAction(
-        UIAction(handler: { [weak self] _ in
-            self?.didTapRegister()
-        }), for: .touchUpInside)
-        return registerButton
+    private lazy var registerButton: CustomActionButton = {
+        return CustomActionButton.linkButton(title: "Нет аккаунта? Зарегистрируйтесь") { [weak self] in
+            print("register")
+            self?.viewModel.trigger(.onShowRegistration)
+        }
     }()
     
-    private func didTapRegister() {
-        print("Переход к экрану регистрации")
-    }
 }
 
 private extension CGFloat {
-    static let cornerRadius: CGFloat = 16
-    static let height: CGFloat = 60
-    static let leftSpace: CGFloat = 16
     static let stackViewSpacing: CGFloat = 16
 }
 
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField {
-        case phoneNumberTextField:
-            passwordTextField.becomeFirstResponder()
-        case passwordTextField:
-            let phoneNumber = self.phoneNumberTextField.text ?? ""
-            let password = self.passwordTextField.text ?? ""
-            self.viewModel.trigger(.onLogin(phoneNumber: phoneNumber, password: password))
-        default:
-            break
-        }
+        let phoneNumber = self.phoneNumberTextField.text ?? ""
+        let password = self.passwordTextField.text ?? ""
+        self.viewModel.trigger(.onLogin(phoneNumber: phoneNumber, password: password))
         return true
+    }
+}
+extension LoginViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 }

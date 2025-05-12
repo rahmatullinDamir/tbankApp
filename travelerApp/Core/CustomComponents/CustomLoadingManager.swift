@@ -7,8 +7,8 @@
 
 import UIKit
 
-class LoadingManager {
-    static let shared = LoadingManager()
+class CustomLoadingManager {
+    static let shared = CustomLoadingManager()
     
     private var loadingView: UIView?
     private var activityIndicator: UIActivityIndicatorView?
