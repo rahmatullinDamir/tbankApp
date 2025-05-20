@@ -6,8 +6,6 @@
 //
 
 import UIKit
-
-// MARK: - ActionButton
 class CustomActionButton: UIButton {
     // MARK: - Инициализаторы
     
@@ -20,6 +18,20 @@ class CustomActionButton: UIButton {
         super.init(coder: coder)
         setupButton()
     }
+    
+    override var isEnabled: Bool {
+        didSet {
+            updateBackgroundColor()
+        }
+    }
+
+    private func updateBackgroundColor() {
+        if isEnabled {
+            backgroundColor = UIColor(hex: CustomColors.yellow.value)
+        } else {
+            backgroundColor = UIColor(hex: CustomColors.yellow.value).withAlphaComponent(CGFloat.blurOpacity)
+        }
+    }
 
     convenience init(title: String) {
         self.init(type: .system)
@@ -31,10 +43,17 @@ class CustomActionButton: UIButton {
         setupButton(title: title, height: height)
     }
     
-    convenience init(title: String, backgroundColor: UIColor, titleColor: UIColor, height: CGFloat = LayoutConstants.defaultButtonHeight) {
+    convenience init(
+        title: String,
+        backgroundColor: UIColor,
+        titleColor: UIColor,
+        height: CGFloat = LayoutConstants.defaultButtonHeight,
+        isEnabled: Bool = true
+    ) {
         self.init(type: .system)
         setupButton(title: title, height: height)
         self.setTitleColor(titleColor, for: .normal)
+        self.isEnabled = isEnabled
         self.backgroundColor = backgroundColor
     }
 
@@ -60,5 +79,10 @@ class CustomActionButton: UIButton {
 
         self.heightAnchor.constraint(equalToConstant: height).isActive = true
         self.layer.cornerRadius = LayoutConstants.defaultCornerRadius
+        self.isEnabled = false
     }
+}
+
+private extension CGFloat {
+    static let blurOpacity: CGFloat = 0.8
 }
