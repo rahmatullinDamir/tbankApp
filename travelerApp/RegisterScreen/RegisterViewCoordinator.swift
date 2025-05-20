@@ -6,15 +6,16 @@
 //
 import UIKit
 
-class RegisterCoordinator: BaseCoordinator {
-
+class RegisterViewCoordinator: Coordinator {
+    weak var parentCoordinator: (any Coordinator)?
+    var childCoordinators: [any Coordinator] = []
     private let navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
-    override func start() {
+    func start() {
         let viewModel = RegisterViewModel()
         viewModel.delegate = self
         let viewController = RegisterViewController(viewModel: viewModel)
@@ -23,9 +24,9 @@ class RegisterCoordinator: BaseCoordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
 }
-extension RegisterCoordinator: RegisterViewModelDelegate {
+extension RegisterViewCoordinator: RegisterViewModelDelegate {
     func registerViewModelDidRequestLogin() {
         navigationController.popViewController(animated: true)
-//        removeChild(self) убрать ссылку из координатора рутового
+        parentCoordinator?.removeChild(self)
     }
 }

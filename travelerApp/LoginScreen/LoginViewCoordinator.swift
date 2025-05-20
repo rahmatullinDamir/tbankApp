@@ -7,32 +7,27 @@
 
 import UIKit
 
-// LoginViewCoordinator.swift
-
-class LoginViewCoordinator: BaseCoordinator {
+class LoginViewCoordinator: Coordinator {
+    weak var parentCoordinator: (any Coordinator)?
+    var childCoordinators: [any Coordinator] = []
+    
     private let navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    override func start() {
+    func start() {
         let viewModel = LoginViewModel()
         viewModel.delegate = self
         let viewController = LoginViewController(viewModel: viewModel)
         
-        // Устанавливаем view controller как корневой в навигации
         navigationController.setViewControllers([viewController], animated: false)
     }
-    
-    deinit {
-          print("LoginViewCoordinator deinited") // 👈 Если это печатается раньше времени — проблема
-      }
 }
 extension LoginViewCoordinator: LoginViewModelDelegate {
     func loginViewModelDidRequestRegistration() {
-        print("start!")
-        let registerCoordinator = RegisterCoordinator(navigationController: navigationController)
+        let registerCoordinator = RegisterViewCoordinator(navigationController: navigationController)
         addChild(registerCoordinator)
         registerCoordinator.start()
     }
