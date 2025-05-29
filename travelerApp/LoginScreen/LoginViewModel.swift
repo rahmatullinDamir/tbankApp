@@ -16,8 +16,7 @@ protocol LoginViewModeling: ViewModel where State == LoginViewState, Intent == L
     var phoneNumberPublisher: AnyPublisher<String, Never> { get}
     var phoneNumberErrorPublisher: AnyPublisher<String?, Never> { get }
     var passwordErrorPublisher: AnyPublisher<String?, Never> { get }
-
-    func validateFields()
+    var isFormValidPublisher: AnyPublisher<Bool, Never> { get }
 }
 
 protocol LoginViewModelDelegate: AnyObject {
@@ -48,6 +47,17 @@ final class LoginViewModel: LoginViewModeling {
 
     // MARK: - Publishers
     
+    var isFormValidPublisher: AnyPublisher<Bool, Never> {
+        Publishers.CombineLatest4(
+            $phoneNumber.map { !$0.isEmpty },
+            $password.map { !$0.isEmpty },
+            $phoneNumberError.map { $0 == nil },
+            $passwordError.map { $0 == nil }
+        )
+        .map { $0 && $1 && $2 && $3 }
+        .eraseToAnyPublisher()
+    }
+    
     var phoneNumberPublisher: AnyPublisher<String, Never> {
         $phoneNumber.eraseToAnyPublisher()
     }
@@ -58,12 +68,6 @@ final class LoginViewModel: LoginViewModeling {
 
     var passwordErrorPublisher: AnyPublisher<String?, Never> {
         $passwordError.eraseToAnyPublisher()
-    }
-
-    // MARK: - Validation Logic
-    func validateFields() {
-        phoneNumberError = validator.validate(phoneNumber: phoneNumber)
-        passwordError = validator.validate(password: password)
     }
     
     func trigger(_ intent: LoginViewIntent) {
@@ -88,16 +92,15 @@ final class LoginViewModel: LoginViewModeling {
                 }
             }
         case .onShowRegistration:
-            print("showRegistration")
             delegate?.loginViewModelDidRequestRegistration()
             
         case .onUpdatePassword(text: let text):
             self.password = text ?? ""
-            validateFields()
+            passwordError = validator.validate(password: password)
             
         case .onUpdatePhoneNumber(text: let text):
             self.phoneNumber = text ?? ""
-            validateFields()
+            phoneNumberError = validator.validate(phoneNumber: phoneNumber)
         }
     }
 }

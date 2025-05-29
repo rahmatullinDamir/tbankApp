@@ -7,7 +7,7 @@
 import UIKit
 
 class RootCoordinator: Coordinator {
-    var parentCoordinator: (any Coordinator)?
+    weak var parentCoordinator: (any Coordinator)?
     var childCoordinators: [any Coordinator] = []
     private let navigationController: UINavigationController
     private let window: UIWindow
@@ -18,16 +18,21 @@ class RootCoordinator: Coordinator {
     }
     
     func start() {
-        let loginCoordinator = LoginViewCoordinator(navigationController: navigationController)
-            addChild(loginCoordinator)
-            loginCoordinator.start()
-            window.rootViewController = navigationController
-            window.makeKeyAndVisible()
+        showLoginFlow()
+    }
+    
+    func showLoginFlow() {
+        let loginCoordinator = CoordinatorFactory().makeLoginCoordinator(navigationController: navigationController)
+        addChild(loginCoordinator)
+        loginCoordinator.start()
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
     }
     
     func showSettings() {
         let coordinator = SettingsCoordinator()
         addChild(coordinator)
+        coordinator.parentCoordinator = self
         coordinator.start()
     }
 }

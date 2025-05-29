@@ -12,7 +12,6 @@ import SnapKit
 final class LoginViewController: UIViewController {
     private let viewModel: any LoginViewModeling
     private var bag: Set<AnyCancellable> = []
-    private var hasInputOccurred = false
     
     init(viewModel: any LoginViewModeling) {
         self.viewModel = viewModel
@@ -42,25 +41,13 @@ final class LoginViewController: UIViewController {
     }
     
     private func bindFields() {
-        Publishers.CombineLatest(
-            phoneNumberTextField.textPublisher,
-            passwordTextField.textPublisher
-        )
-        .map { text1, text2 in
-            (text1?.isEmpty == false) || (text2?.isEmpty == false)
-        }
-        .sink { [weak self] flag in
-            self?.hasInputOccurred = flag
-            self?.viewModel.validateFields()
-        }
-        .store(in: &bag)
-        
         phoneNumberTextField.textPublisher
             .map { rawText in
-                let digits = rawText?.compactMap { $0.whateverDigit }.joined() ?? ""
-                return PhoneNumber.applyMask(to: digits)
+                let digits = PhoneNumberFormatter.digits(from: rawText)
+                return PhoneNumberFormatter.applyMask(to: digits)
             }
             .sink { [weak self] formattedNumber in
+                self?.phoneNumberTextField.textField.text = formattedNumber
                 self?.viewModel.trigger(.onUpdatePhoneNumber(text: formattedNumber))
             }
             .store(in: &bag)
@@ -75,7 +62,7 @@ final class LoginViewController: UIViewController {
             viewModel.passwordErrorPublisher,
             viewModel.phoneNumberErrorPublisher
         )
-        .receive(on: RunLoop.main)
+        .receive(on: DispatchQueue.main)
         .sink { [weak self] passwordError, phoneNumberError in
             self?.phoneNumberTextField.showError(phoneNumberError)
             self?.passwordTextField.showError(passwordError)
@@ -86,25 +73,19 @@ final class LoginViewController: UIViewController {
             viewModel.phoneNumberPublisher,
             viewModel.phoneNumberErrorPublisher
         )
-        .receive(on: RunLoop.main)
+        .receive(on: DispatchQueue.main)
         .filter { phoneNumber, error in
-            (phoneNumber.count == 18) && error == nil
+            phoneNumber.count == 18 && error == nil
         }
-        .sink { [weak self] phoneNumber, _ in
-            self?.phoneNumberTextField.textField.text = phoneNumber
+        .sink { [weak self] _, _ in
             self?.passwordTextField.textField.becomeFirstResponder()
         }
         .store(in: &bag)
         
-        Publishers.CombineLatest(
-            viewModel.phoneNumberErrorPublisher,
-            viewModel.passwordErrorPublisher
-        )
-        .map { $0 == nil && $1 == nil && self.hasInputOccurred }
-        .sink { isValid in
-            self.loginButton.isEnabled = isValid
-        }
-        .store(in: &bag)
+        viewModel.isFormValidPublisher
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.isEnabled, on: loginButton)
+            .store(in: &bag)
     }
     
     private func configureUI() {

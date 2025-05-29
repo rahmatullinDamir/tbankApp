@@ -16,13 +16,14 @@ class RegisterViewCoordinator: Coordinator {
     }
 
     func start() {
-        let viewModel = RegisterViewModel()
-        viewModel.delegate = self
-        let viewController = RegisterViewController(viewModel: viewModel)
-        
+        showRegisterFlow()
+    }
+    
+    func showRegisterFlow() {
+        let viewController = ModuleFactory().makeRegisterModule(coordinator: self)
         viewController.navigationItem.hidesBackButton = true
         navigationController.pushViewController(viewController, animated: true)
-    }
+    }    
 }
 extension RegisterViewCoordinator: RegisterViewModelDelegate {
     func registerViewModelDidRequestLogin() {

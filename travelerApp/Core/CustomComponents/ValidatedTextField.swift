@@ -13,7 +13,6 @@ class ValidatedTextField: UIView {
     var textField: CustomTextField
     let errorLabel = UILabel()
 
-    // MARK: - Publishers
     var textPublisher: AnyPublisher<String?, Never> {
         NotificationCenter.default
             .publisher(for: UITextField.textDidChangeNotification, object: textField)
@@ -21,7 +20,6 @@ class ValidatedTextField: UIView {
             .eraseToAnyPublisher()
     }
 
-    // MARK: - Инициализаторы
     override init(frame: CGRect) {
         self.textField = CustomTextField()
         super.init(frame: frame)
@@ -40,7 +38,6 @@ class ValidatedTextField: UIView {
         setup()
     }
 
-    // MARK: - Настройка UI
     private func setup() {
         textField.translatesAutoresizingMaskIntoConstraints = false
         addSubview(textField)
@@ -49,6 +46,7 @@ class ValidatedTextField: UIView {
         errorLabel.font = UIFont.systemFont(ofSize: FontConstants.regular.value)
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         errorLabel.isHidden = true
+        errorLabel.numberOfLines = 0
         addSubview(errorLabel)
 
         textField.snp.makeConstraints { make in
