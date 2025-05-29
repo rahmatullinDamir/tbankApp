@@ -23,8 +23,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.rootCoordinator = RootCoordinator(window: window)
         self.rootCoordinator?.start()
-
-    
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {}

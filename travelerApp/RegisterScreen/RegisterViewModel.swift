@@ -12,7 +12,6 @@ protocol RegisterViewModelDelegate: AnyObject {
     func registerViewModelDidRequestLogin()
 }
 
-
 class RegisterViewModel: RegisterViewModelling {
     @Published private(set) var state: RegisterViewState = .loading {
         didSet {
@@ -32,7 +31,5 @@ class RegisterViewModel: RegisterViewModelling {
         case .onRegisterTapped(phone: let phone, name: let name, password: let password):
             print("Registerrrr")
         }
-        
-        
     }
 }

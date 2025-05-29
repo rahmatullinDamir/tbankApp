@@ -22,7 +22,8 @@ class RegisterViewController: UIViewController {
     }
 
     private func configureIO() {
-        registrationButton.addAction(UIAction { [weak self] _ in
+        registrationButton.addAction(
+            UIAction { [weak self] _ in
             guard let self = self else { return }
             let phoneNumber = self.phoneNumberTextField.text ?? ""
             let name = self.nameTextField.text ?? ""
@@ -30,7 +31,8 @@ class RegisterViewController: UIViewController {
             let confirmPassword = self.confirmPasswordTextField.text ?? ""
 
             self.viewModel.trigger(.onRegisterTapped(phone: phoneNumber, name: name, password: password))
-        }, for: .touchUpInside)
+            },
+            for: .touchUpInside)
     }
 
     private func configureUI() {
@@ -134,8 +136,7 @@ extension RegisterViewController: UITextFieldDelegate {
             // Получаем значения текстовых полей
             let password = passwordTextField.text ?? ""
             let confirmPassword = confirmPasswordTextField.text ?? ""
-            
-
+        
             // Проверяем совпадение паролей
             if !password.isEmpty && password == confirmPassword {
                 registrationButton.sendActions(for: .touchUpInside)

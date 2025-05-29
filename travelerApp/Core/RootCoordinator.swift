@@ -6,27 +6,27 @@
 //
 import UIKit
 
-class RootCoordinator: BaseCoordinator {
-    private let window: UIWindow
-
+class RootCoordinator: Coordinator {
+    var parentCoordinator: (any Coordinator)?
+    var childCoordinators: [any Coordinator] = []
     private let navigationController: UINavigationController
-
+    private let window: UIWindow
+    
     init(window: UIWindow) {
-        self.window = window
         self.navigationController = UINavigationController()
+        self.window = window
     }
-
-    override func start() {
+    
+    func start() {
         let loginCoordinator = LoginViewCoordinator(navigationController: navigationController)
-        addChild(loginCoordinator)
-        loginCoordinator.start()
-        window.rootViewController = navigationController
-        window.makeKeyAndVisible()
+            addChild(loginCoordinator)
+            loginCoordinator.start()
+            window.rootViewController = navigationController
+            window.makeKeyAndVisible()
     }
-
+    
     func showSettings() {
         let coordinator = SettingsCoordinator()
-        coordinator.parent = self
         addChild(coordinator)
         coordinator.start()
     }
