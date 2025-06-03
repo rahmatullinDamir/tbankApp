@@ -15,7 +15,7 @@ protocol LoginValidating {
 struct LoginValidator: LoginValidating {
     func validate(phoneNumber: String?) -> String? {
         guard let phone = phoneNumber else { return nil }
-        if !PhoneNumber.isValid(phone) {
+        if !PhoneNumberFormatter.isValid(phone) {
             return "Неверный формат номера"
         }
         return nil

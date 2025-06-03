@@ -32,7 +32,7 @@ class CustomTextField: UITextField {
         self.borderStyle = .none
         self.autocapitalizationType = .none
         self.font = UIFont(name: FontFamilies.robotoRegular.value, size: FontConstants.regular.value)
-        self.backgroundColor = UIColor(hex: CustomColors.grey.value, alpha: 0.03)
+        self.backgroundColor = UIColor(hex: CustomColors.grey.value, alpha: 0.02)
         self.layer.cornerRadius = LayoutConstants.defaultCornerRadius
         
         self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: LayoutConstants.leftSpace, height: 0))

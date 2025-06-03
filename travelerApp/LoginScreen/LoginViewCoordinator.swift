@@ -18,16 +18,13 @@ class LoginViewCoordinator: Coordinator {
     }
     
     func start() {
-        let viewModel = LoginViewModel()
-        viewModel.delegate = self
-        let viewController = LoginViewController(viewModel: viewModel)
-        
+        let viewController = ModuleFactory().makeLoginModule(coordinator: self)
         navigationController.setViewControllers([viewController], animated: false)
     }
 }
 extension LoginViewCoordinator: LoginViewModelDelegate {
     func loginViewModelDidRequestRegistration() {
-        let registerCoordinator = RegisterViewCoordinator(navigationController: navigationController)
+        let registerCoordinator = CoordinatorFactory().makeRegisterCoordinator(navigationController: navigationController)
         addChild(registerCoordinator)
         registerCoordinator.start()
     }
