@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		83693D3F2DC081CA00108C63 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 83693D3E2DC081CA00108C63 /* SnapKit */; };
+		83769E372DEFCEB800574A21 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 83769E362DEFCEB800574A21 /* Alamofire */; };
+		83769E3A2DEFCF0F00574A21 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 83769E392DEFCF0F00574A21 /* KeychainAccess */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				83693D3F2DC081CA00108C63 /* SnapKit in Frameworks */,
+				83769E372DEFCEB800574A21 /* Alamofire in Frameworks */,
+				83769E3A2DEFCF0F00574A21 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +136,8 @@
 			name = travelerApp;
 			packageProductDependencies = (
 				83693D3E2DC081CA00108C63 /* SnapKit */,
+				83769E362DEFCEB800574A21 /* Alamofire */,
+				83769E392DEFCF0F00574A21 /* KeychainAccess */,
 			);
 			productName = travelerApp;
 			productReference = 835F30892DB5CE08002CD387 /* travelerApp.app */;
@@ -217,6 +223,8 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				83693D3D2DC081CA00108C63 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				83769E0D2DEFC51400574A21 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				83769E382DEFCF0F00574A21 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 835F308A2DB5CE08002CD387 /* Products */;
@@ -605,6 +613,22 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		83769E0D2DEFC51400574A21 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		83769E382DEFCF0F00574A21 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -612,6 +636,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 83693D3D2DC081CA00108C63 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		83769E362DEFCEB800574A21 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83769E0D2DEFC51400574A21 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		83769E392DEFCF0F00574A21 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83769E382DEFCF0F00574A21 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

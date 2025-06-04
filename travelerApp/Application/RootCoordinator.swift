@@ -30,9 +30,8 @@ class RootCoordinator: Coordinator {
     }
     
     func showSettings() {
-        let coordinator = SettingsCoordinator()
+        let coordinator = SettingsViewCoordinator(navigationController: navigationController)
         addChild(coordinator)
-        coordinator.parentCoordinator = self
         coordinator.start()
     }
 }
