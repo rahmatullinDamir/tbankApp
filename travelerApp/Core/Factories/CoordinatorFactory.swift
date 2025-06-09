@@ -16,4 +16,16 @@ class CoordinatorFactory {
     func makeRegisterCoordinator(navigationController: UINavigationController) -> RegisterViewCoordinator {
         RegisterViewCoordinator(navigationController: navigationController)
     }
+    
+    func makeCreateTripCoordinator(navigationController: UINavigationController) -> CreateTripViewCoordinator {
+        CreateTripViewCoordinator(navigationController: navigationController)
+    }
+    
+    func makeProfileCoordinator(navigationController: UINavigationController, authResponse: AuthResponse) -> ProfileViewCoordinator {
+        ProfileViewCoordinator(navigationController: navigationController, authResponse: authResponse)
+    }
+    
+    func makeTripListCoordinator(navigationController: UINavigationController, authResponse: AuthResponse) -> TripListViewCoordinator {
+        TripListViewCoordinator(navigationController: navigationController, authResponse: authResponse)
+    }
 }
