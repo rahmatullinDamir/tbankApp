@@ -49,7 +49,20 @@ extension TripEndpoints: APIEndpoint {
             return params
             
         case .createTrip(let trip):
-            return try? trip.asDictionary()
+            var params: [String: Any] = [
+                "name": trip.name,
+                "startDate": trip.startDate.apiFormatted,
+                "endDate": trip.endDate?.apiFormatted ?? trip.startDate.apiFormatted,
+                "participants": trip.participants ?? [],
+                "totalBudget": trip.totalBudget ?? 0.0
+            ]
+            
+            if let createdDate = trip.createdDate {
+                params["createdDate"] = createdDate.apiFormatted
+            }
+            
+            print("Trip creation parameters: \(params)")
+            return params
             
         case .updateTripStatus(_, let status):
             return ["status": status.rawValue]
@@ -61,4 +74,14 @@ extension TripEndpoints: APIEndpoint {
             return nil
         }
     }
+    
+    var encoding: ParameterEncoding {
+        switch self {
+        case .createTrip, .addParticipant:
+            return JSONEncoding.default
+        default:
+            return URLEncoding.default
+        }
+    }
 } 
+ 

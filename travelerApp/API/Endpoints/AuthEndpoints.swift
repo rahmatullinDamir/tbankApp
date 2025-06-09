@@ -4,7 +4,8 @@ import Alamofire
 enum AuthEndpoints {
     case login(LoginDto)
     case register(RegistrationFormDto)
-    case refreshToken
+    case refreshToken(String)
+    case getUsersByPhoneNumbers([String])
 }
 
 extension AuthEndpoints: APIEndpoint {
@@ -16,14 +17,16 @@ extension AuthEndpoints: APIEndpoint {
             return NetworkConstants.apiPath + "/user"
         case .refreshToken:
             return NetworkConstants.apiPath + "/refresh"
+        case .getUsersByPhoneNumbers:
+            return NetworkConstants.apiPath + "/user/byPhoneNumber"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .login, .register:
+        case .login, .register, .refreshToken:
             return .post
-        case .refreshToken:
+        case .getUsersByPhoneNumbers:
             return .get
         }
     }
@@ -36,6 +39,25 @@ extension AuthEndpoints: APIEndpoint {
             return try? request.asDictionary()
         case .refreshToken:
             return nil
+        case .getUsersByPhoneNumbers(let phoneNumbers):
+            return ["phoneNumbers": phoneNumbers]
         }
+    }
+    
+    var headers: HTTPHeaders {
+        var headers = HTTPHeaders()
+        headers.add(.contentType("application/json"))
+        headers.add(.accept("application/json"))
+        
+        switch self {
+        case .refreshToken(let refreshToken):
+            headers.add(.authorization(bearerToken: refreshToken))
+        default:
+            if let accessToken = KeychainManager.shared.getAccessToken() {
+                headers.add(.authorization(bearerToken: accessToken))
+            }
+        }
+        
+        return headers
     }
 } 
