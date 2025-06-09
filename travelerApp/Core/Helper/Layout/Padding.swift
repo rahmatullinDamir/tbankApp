@@ -8,7 +8,7 @@
 import Foundation
 
 enum Padding {
-    case tiny, `default`, big, small
+    case tiny, `default`, big, small, middle, medium
     
     var value: CGFloat {
         switch self {
@@ -16,8 +16,12 @@ enum Padding {
             4
         case .tiny:
             8
+        case .medium:
+            12
         case .default:
             16
+        case .middle:
+            20
         case .big:
             32
         }
