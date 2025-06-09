@@ -27,4 +27,10 @@ struct UserDto: Codable {
     let firstName: String
     let lastName: String
     let phoneNumber: String
+    
+    var initials: String {
+        let firstInitial = firstName.prefix(1).uppercased()
+        let lastInitial = lastName.prefix(1).uppercased()
+        return firstInitial + lastInitial
+    }
 }

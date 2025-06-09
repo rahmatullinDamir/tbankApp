@@ -1,11 +1,12 @@
 import Foundation
 
 protocol CategoryServicing {
-    func getAllCategories() async throws -> CategoryListDto
+    func getAllCategories() async throws -> [CategoryDto]
     func getCategoryById(id: Int64) async throws -> CategoryDto
     func createCategory(_ category: CreateCategoryRequestDto) async throws -> CategoryDto
     func updateCategory(_ category: UpdateCategoryRequestDto) async throws -> CategoryDto
     func deleteCategory(id: Int64) async throws
+    func findCategoryByName(_ name: String) async throws -> CategoryDto?
 }
 
 final class CategoryService: CategoryServicing {
@@ -15,7 +16,7 @@ final class CategoryService: CategoryServicing {
         self.networkService = networkService
     }
     
-    func getAllCategories() async throws -> CategoryListDto {
+    func getAllCategories() async throws -> [CategoryDto] {
         let endpoint = CategoryEndpoints.getAllCategories
         return try await networkService.request(endpoint)
     }
@@ -38,5 +39,10 @@ final class CategoryService: CategoryServicing {
     func deleteCategory(id: Int64) async throws {
         let endpoint = CategoryEndpoints.deleteCategory(id: id)
         try await networkService.request(endpoint)
+    }
+    
+    func findCategoryByName(_ name: String) async throws -> CategoryDto? {
+        let categories = try await getAllCategories()
+        return categories.first { $0.name.lowercased() == name.lowercased() }
     }
 } 
