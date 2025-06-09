@@ -6,7 +6,7 @@
 //
 
 enum CustomColors {
-    case yellow, grey, black, blue
+    case yellow, grey, black, blue, lightBlue, lightTextSecondary
     
     var value: String {
         switch self {
@@ -18,6 +18,10 @@ enum CustomColors {
             return "333333"
         case .blue:
             return "428BF9"
+        case .lightBlue:
+            return "36AFFF"
+        case .lightTextSecondary:
+            return "9299A2"
         }
     }
 }

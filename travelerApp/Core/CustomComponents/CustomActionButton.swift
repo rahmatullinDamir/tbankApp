@@ -7,7 +7,6 @@
 
 import UIKit
 class CustomActionButton: UIButton {
-    // MARK: - Инициализаторы
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -69,7 +68,6 @@ class CustomActionButton: UIButton {
         
         return button
     }
-    // MARK: - Настройка кнопки
 
     private func setupButton(title: String = "", height: CGFloat = LayoutConstants.defaultButtonHeight) {
         self.setTitle(title, for: .normal)

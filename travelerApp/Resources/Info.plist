@@ -25,5 +25,18 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageName</key>
+		<string>LaunchScreenImage</string>
+		<key>UIImageRespectsSafeAreaInsets</key>
+	<false/>
+		<key>UILaunchScreenSize</key>
+		<string>{375, 812}</string>
+	</dict>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleDefault</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 </dict>
 </plist>

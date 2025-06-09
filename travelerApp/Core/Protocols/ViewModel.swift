@@ -8,11 +8,12 @@
 import Foundation
 import Combine
 
-protocol ViewModel: ObservableObject {
+protocol ViewModel: AnyObject {
     associatedtype State
     associatedtype Intent
- 
-    var state: State {get}
+    
+    var state: State { get }
     var stateDidChange: ObservableObjectPublisher { get }
+    
     func trigger(_ intent: Intent)
 }

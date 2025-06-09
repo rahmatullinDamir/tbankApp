@@ -7,9 +7,7 @@
 
 import UIKit
 
-// MARK: - CustomTextField
 class CustomTextField: UITextField {
-    // MARK: - Инициализаторы
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,7 +30,7 @@ class CustomTextField: UITextField {
         self.borderStyle = .none
         self.autocapitalizationType = .none
         self.font = UIFont(name: FontFamilies.robotoRegular.value, size: FontConstants.regular.value)
-        self.backgroundColor = UIColor(hex: CustomColors.grey.value, alpha: 0.02)
+        self.backgroundColor = UIColor(hex: CustomColors.grey.value, alpha: CGFloat.defaultAlpha)
         self.layer.cornerRadius = LayoutConstants.defaultCornerRadius
         
         self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: LayoutConstants.leftSpace, height: 0))
@@ -40,4 +38,8 @@ class CustomTextField: UITextField {
 
         self.heightAnchor.constraint(equalToConstant: LayoutConstants.defaultTextFieldHeight).isActive = true
     }
+}
+
+private extension CGFloat {
+    static let defaultAlpha: CGFloat = 0.02
 }

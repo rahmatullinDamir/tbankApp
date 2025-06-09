@@ -3,8 +3,8 @@ import Foundation
 protocol AuthServicing {
     func login(with credentials: LoginDto) async throws -> AuthResponse
     func register(with form: RegistrationFormDto) async throws -> AuthResponse
-    func refreshToken() async throws -> JwtTokenPairDto
     func logout()
+    func getUsersByPhoneNumbers(_ phoneNumbers: [String]) async throws -> [UserDto]
 }
 
 final class AuthService: AuthServicing {
@@ -21,6 +21,7 @@ final class AuthService: AuthServicing {
         let response: AuthResponse = try await networkService.request(endpoint)
         let tokens = response.jwtTokenPairDto
         keychainManager.saveTokens(accessToken: tokens.accessToken, refreshToken: tokens.refreshToken)
+        keychainManager.savePhoneNumber(credentials.phoneNumber)
         return response
     }
     
@@ -29,15 +30,17 @@ final class AuthService: AuthServicing {
         let response: AuthResponse = try await networkService.request(endpoint)
         let tokens = response.jwtTokenPairDto
         keychainManager.saveTokens(accessToken: tokens.accessToken, refreshToken: tokens.refreshToken)
+        keychainManager.savePhoneNumber(form.phoneNumber)
         return response
-    }
-    
-    func refreshToken() async throws -> JwtTokenPairDto {
-        let endpoint = AuthEndpoints.refreshToken
-        return try await networkService.request(endpoint)
     }
     
     func logout() {
         keychainManager.removeTokens()
+        keychainManager.removePhoneNumber()
+    }
+    
+    func getUsersByPhoneNumbers(_ phoneNumbers: [String]) async throws -> [UserDto] {
+        let endpoint = AuthEndpoints.getUsersByPhoneNumbers(phoneNumbers)
+        return try await networkService.request(endpoint)
     }
 }

@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< Updated upstream
 		83693D3F2DC081CA00108C63 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 83693D3E2DC081CA00108C63 /* SnapKit */; };
-		83769E372DEFCEB800574A21 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 83769E362DEFCEB800574A21 /* Alamofire */; };
-		83769E3A2DEFCF0F00574A21 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 83769E392DEFCF0F00574A21 /* KeychainAccess */; };
+=======
+		83FAF0A12DF5C934002220D3 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 83FAF0A02DF5C934002220D3 /* SkeletonView */; };
+		83FAF0A32DF5C939002220D3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 83FAF0A22DF5C939002220D3 /* Alamofire */; };
+		83FAF0A52DF5C93E002220D3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 83FAF0A42DF5C93E002220D3 /* SnapKit */; };
+>>>>>>> Stashed changes
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		837421772DBE8D8C00FDBE7E /* Exceptions for "travelerApp" folder in "travelerApp" target */ = {
+		83D6B9682DF7317B00F17CD2 /* Exceptions for "travelerApp" folder in "travelerApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Resources/Info.plist,
@@ -59,7 +63,7 @@
 		837421712DBE8D8C00FDBE7E /* travelerApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				837421772DBE8D8C00FDBE7E /* Exceptions for "travelerApp" folder in "travelerApp" target */,
+				83D6B9682DF7317B00F17CD2 /* Exceptions for "travelerApp" folder in "travelerApp" target */,
 			);
 			path = travelerApp;
 			sourceTree = "<group>";
@@ -71,9 +75,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< Updated upstream
 				83693D3F2DC081CA00108C63 /* SnapKit in Frameworks */,
-				83769E372DEFCEB800574A21 /* Alamofire in Frameworks */,
-				83769E3A2DEFCF0F00574A21 /* KeychainAccess in Frameworks */,
+=======
+				83FAF0A52DF5C93E002220D3 /* SnapKit in Frameworks */,
+				83FAF0A12DF5C934002220D3 /* SkeletonView in Frameworks */,
+				83FAF0A32DF5C939002220D3 /* Alamofire in Frameworks */,
+>>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +108,7 @@
 				837421712DBE8D8C00FDBE7E /* travelerApp */,
 				835F30A52DB5CE0B002CD387 /* travelerAppTests */,
 				835F30AF2DB5CE0B002CD387 /* travelerAppUITests */,
+				83FAF09F2DF5C933002220D3 /* Frameworks */,
 				835F308A2DB5CE08002CD387 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +121,13 @@
 				835F30AC2DB5CE0B002CD387 /* travelerAppUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		83FAF09F2DF5C933002220D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,9 +151,13 @@
 			);
 			name = travelerApp;
 			packageProductDependencies = (
+<<<<<<< Updated upstream
 				83693D3E2DC081CA00108C63 /* SnapKit */,
-				83769E362DEFCEB800574A21 /* Alamofire */,
-				83769E392DEFCF0F00574A21 /* KeychainAccess */,
+=======
+				83FAF0A02DF5C934002220D3 /* SkeletonView */,
+				83FAF0A22DF5C939002220D3 /* Alamofire */,
+				83FAF0A42DF5C93E002220D3 /* SnapKit */,
+>>>>>>> Stashed changes
 			);
 			productName = travelerApp;
 			productReference = 835F30892DB5CE08002CD387 /* travelerApp.app */;
@@ -222,9 +242,13 @@
 			mainGroup = 835F30802DB5CE08002CD387;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+<<<<<<< Updated upstream
 				83693D3D2DC081CA00108C63 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				83769E0D2DEFC51400574A21 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				83769E382DEFCF0F00574A21 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+=======
+				83FAF09C2DF5C903002220D3 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				83FAF09D2DF5C912002220D3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				83FAF09E2DF5C92A002220D3 /* XCRemoteSwiftPackageReference "SnapKit" */,
+>>>>>>> Stashed changes
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 835F308A2DB5CE08002CD387 /* Products */;
@@ -327,14 +351,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = travelerApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreenImage;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -354,14 +379,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = travelerApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreenImage;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -428,7 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -485,6 +511,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -501,8 +528,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = rahmatullin.damir.travelerAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -519,8 +544,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = rahmatullin.damir.travelerAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -536,7 +559,6 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = rahmatullin.damir.travelerAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -552,7 +574,6 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = rahmatullin.damir.travelerAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -605,15 +626,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		83693D3D2DC081CA00108C63 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		83FAF09C2DF5C903002220D3 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit#";
+			repositoryURL = "https://github.com/Juanpe/SkeletonView";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.1;
+				minimumVersion = 1.31.0;
 			};
 		};
-		83769E0D2DEFC51400574A21 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+<<<<<<< Updated upstream
+=======
+		83FAF09D2DF5C912002220D3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -621,32 +644,36 @@
 				minimumVersion = 5.10.2;
 			};
 		};
-		83769E382DEFCF0F00574A21 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+		83FAF09E2DF5C92A002220D3 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			repositoryURL = "https://github.com/SnapKit/SnapKit#";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
 			};
 		};
+>>>>>>> Stashed changes
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		83693D3E2DC081CA00108C63 /* SnapKit */ = {
+		83FAF0A02DF5C934002220D3 /* SkeletonView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 83693D3D2DC081CA00108C63 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
+			package = 83FAF09C2DF5C903002220D3 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
-		83769E362DEFCEB800574A21 /* Alamofire */ = {
+<<<<<<< Updated upstream
+=======
+		83FAF0A22DF5C939002220D3 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 83769E0D2DEFC51400574A21 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 83FAF09D2DF5C912002220D3 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		83769E392DEFCF0F00574A21 /* KeychainAccess */ = {
+		83FAF0A42DF5C93E002220D3 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 83769E382DEFCF0F00574A21 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
-			productName = KeychainAccess;
+			package = 83FAF09E2DF5C92A002220D3 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
+>>>>>>> Stashed changes
 /* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 835F30812DB5CE08002CD387 /* Project object */;

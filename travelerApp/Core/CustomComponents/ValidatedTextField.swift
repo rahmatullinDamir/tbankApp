@@ -10,59 +10,54 @@ import Combine
 import SnapKit
 
 class ValidatedTextField: UIView {
-    var textField: CustomTextField
-    let errorLabel = UILabel()
-
+    let textField: CustomTextField
+    
+    private let errorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .systemRed
+        label.font = UIFont(name: FontFamilies.robotoRegular.value, size: FontConstants.tiny.value)
+        label.numberOfLines = 0
+        label.isHidden = true
+        return label
+    }()
+    
+    var text: String? {
+        textField.text
+    }
+    
     var textPublisher: AnyPublisher<String?, Never> {
-        NotificationCenter.default
-            .publisher(for: UITextField.textDidChangeNotification, object: textField)
-            .map { _ in self.textField.text }
-            .eraseToAnyPublisher()
+        textField.textPublisher
     }
 
-    override init(frame: CGRect) {
-        self.textField = CustomTextField()
-        super.init(frame: frame)
-        setup()
+    init(textField: CustomTextField) {
+        self.textField = textField
+        super.init(frame: .zero)
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         self.textField = CustomTextField()
         super.init(coder: coder)
-        setup()
+        setupView()
     }
 
-    convenience init(_ textField: CustomTextField) {
-        self.init(frame: .zero)
-        self.textField = textField
-        setup()
-    }
-
-    private func setup() {
+    private func setupView() {
         textField.translatesAutoresizingMaskIntoConstraints = false
         addSubview(textField)
-
-        errorLabel.textColor = .red
-        errorLabel.font = UIFont.systemFont(ofSize: FontConstants.regular.value)
-        errorLabel.translatesAutoresizingMaskIntoConstraints = false
-        errorLabel.isHidden = true
-        errorLabel.numberOfLines = 0
         addSubview(errorLabel)
-
+        
         textField.snp.makeConstraints { make in
-            make.leading.trailing.top.equalToSuperview()
+            make.top.leading.trailing.equalToSuperview()
         }
+        
         errorLabel.snp.makeConstraints { make in
-            make.trailing.bottom.equalToSuperview()
-            make.leading.equalToSuperview().offset(Padding.default.value)
             make.top.equalTo(textField.snp.bottom).offset(Padding.small.value)
+            make.leading.trailing.equalToSuperview().inset(Padding.default.value)
+            make.bottom.equalToSuperview()
         }
     }
-
-    var text: String? {
-        textField.text
-    }
-
+    
     func showError(_ message: String?) {
         errorLabel.text = message
         errorLabel.isHidden = message == nil

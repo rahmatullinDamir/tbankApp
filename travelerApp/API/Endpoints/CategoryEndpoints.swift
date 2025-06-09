@@ -13,15 +13,15 @@ extension CategoryEndpoints: APIEndpoint {
     var path: String {
         switch self {
         case .getAllCategories:
-            return "/categories"
+            return NetworkConstants.apiPath + "/category"
         case .getCategoryById(let id):
-            return "/categories/\(id)"
+            return NetworkConstants.apiPath + "/category/\(id)"
         case .createCategory:
-            return "/categories"
+            return NetworkConstants.apiPath + "/category"
         case .updateCategory:
-            return "/categories"
+            return NetworkConstants.apiPath + "/category"
         case .deleteCategory(let id):
-            return "/categories/\(id)"
+            return NetworkConstants.apiPath + "/category/\(id)"
         }
     }
     
@@ -43,9 +43,14 @@ extension CategoryEndpoints: APIEndpoint {
         case .getAllCategories, .getCategoryById, .deleteCategory:
             return nil
         case .createCategory(let request):
-            return try? request.asDictionary()
+            return [
+                "name": request.name
+            ]
         case .updateCategory(let request):
-            return try? request.asDictionary()
+            return [
+                "id": request.id,
+                "name": request.name
+            ]
         }
     }
 } 
